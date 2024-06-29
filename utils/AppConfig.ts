@@ -3,6 +3,6 @@ export const AppConfig = {
   title: 'Slack Off Now',
   description: 'Best Slack Off Platform In New Zealand',
   locale: 'en',
-  gitlab: 'https://gitlab.com/fenge667/slack-off-now',
+  gitRepo: 'https://github.com/Enhao2024/now-slack-off.git',
   iconUrl: 'https://d2n05hlrnagjc.cloudfront.net/logo.png'
 };

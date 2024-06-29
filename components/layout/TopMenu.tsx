@@ -5,7 +5,7 @@ const TopMenu = () => {
   // add more menu items through TOP_BAR_MENU
   const renderMenu = () => TOP_BAR_MENU.map((menu) => {
     let toNewPage = false;
-    if (menu.title === MenuTitle.GITLAB) {
+    if (menu.title === MenuTitle.GIT_REPO) {
       toNewPage = true;
     }
     return <MenuLink key={menu.href} menuName={menu.title} newPage={toNewPage} />

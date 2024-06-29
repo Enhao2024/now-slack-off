@@ -6,7 +6,7 @@ const Hamburger = () => {
 
   const TopBarMenu = () => TOP_BAR_MENU.map((menu) => {
     let toNewPage = false;
-    if (menu.title === MenuTitle.GITLAB) {
+    if (menu.title === MenuTitle.GIT_REPO) {
       toNewPage = true;
     }
     return <MenuItem key={menu.href}>
