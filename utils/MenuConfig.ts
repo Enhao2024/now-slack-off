@@ -1,7 +1,7 @@
 import { AppConfig } from "./AppConfig";
 
 export enum MenuTitle {
-  GITLAB = "GitLab",
+  GIT_REPO = "GitHub",
   CALCULATOR = "Salary Calculator",
   CHAT_ROOM = "Chat Room",
   LUNCH_GUESS = "What's For Lunch",
@@ -17,9 +17,9 @@ export interface Menu {
 }
 
 export const MenuConfig: { [key: string]: Menu } = {
-  [MenuTitle.GITLAB]: {
-    title: MenuTitle.GITLAB,
-    href: AppConfig.gitlab,
+  [MenuTitle.GIT_REPO]: {
+    title: MenuTitle.GIT_REPO,
+    href: AppConfig.gitRepo,
     golive: true,
   },
   [MenuTitle.CHAT_ROOM]: {
@@ -54,4 +54,4 @@ export const MenuConfig: { [key: string]: Menu } = {
   },
 };
 
-export const TOP_BAR_MENU = [MenuConfig[MenuTitle.GITLAB], MenuConfig[MenuTitle.CONTACT]];
+export const TOP_BAR_MENU = [MenuConfig[MenuTitle.GIT_REPO], MenuConfig[MenuTitle.CONTACT]];
