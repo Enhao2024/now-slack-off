@@ -1,0 +1,16 @@
+export const FOOD_TYPES = [
+  'Indian Food',
+  'Chinese Food',
+  'Thai Food',
+  'Fast Food',
+  'Pizza',
+  'Asian Food',
+  'Noodle',
+  'Hamburger',
+  'Italian Food',
+  'Chicken',
+  'Mexican Food',
+  'Light Food',
+  'Seafood',
+  'Korean Food',
+]
