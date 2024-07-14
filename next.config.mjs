@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // config env here rather than fetching directly from components, so both client/server can get envs
+  // please ensure no sensitive env was configed out here!
   env: {
     GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
     // node env, usually set automatically by framework, ["development", "production", "test"]
