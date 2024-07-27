@@ -1,5 +1,5 @@
-import { MenuConfig, MenuTitle } from '@/utils/MenuConfig'
-import { DEV, PREVIEW, PROD } from '@/utils/VercelEnv';
+import { inProduction } from '@/utils/GeneralUtils';
+import { MenuConfig, MenuTitle } from '@/utils/MenuConfig';
 import Link from 'next/link';
 import { ReactNode } from "react";
 
@@ -21,7 +21,7 @@ const MenuLink = ({ menuName, newPage, children }: Props) => {
   }
 
   const greyout = () => {
-    return PROD && !MenuConfig[menuName].golive;
+    return inProduction() && !MenuConfig[menuName].golive;
   }
 
   if (greyout()) {
