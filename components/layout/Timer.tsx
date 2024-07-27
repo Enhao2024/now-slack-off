@@ -1,8 +1,9 @@
 'use client'
 import { RandomProvider } from '@/constants/Providers';
 import { DevConfig } from '@/utils/DevConfig';
+import { inDevelopment } from '@/utils/GeneralUtils';
 import { getHours, getMinutes, getSeconds, isVisitedToday, setHours, setMinutes, setSeconds, setVisitedToday } from '@/utils/localStorage';
-import { DEV, REDIRECT_SEC } from '@/utils/VercelEnv';
+import { REDIRECT_SEC } from '@/utils/VercelEnv';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useTimer } from 'react-timer-hook';
@@ -22,7 +23,7 @@ const Timer = ({ title, fontSize, customize }: Props) => {
   }, [])
 
   const getRemainSeconds = () => {
-    if (DEV) {
+    if (inDevelopment()) {
       return DevConfig.resetSeconds;
     }
     if (!isVisitedToday()) {
