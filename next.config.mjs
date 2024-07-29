@@ -9,6 +9,10 @@ const nextConfig = {
     // vercel env, set automatically by vercel, ["development", "production", "preview"]
     CUR_VERCEL_ENV: process.env.VERCEL_ENV,
     REDIRECT_SEC: process.env.REDIRECT_SEC,
+    // resource URLs
+    PROD_API_URL: process.env.PROD_API_URL,
+    DEV_API_URL: process.env.DEV_API_URL,
+    STATIC_LIB_URL: process.env.STATIC_LIB_URL,
   },
 };
 
