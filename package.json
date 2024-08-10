@@ -14,6 +14,7 @@
     "axios": "^1.7.2",
     "next": "14.2.3",
     "next-seo": "^6.5.0",
+    "nodemailer": "^6.9.14",
     "radash": "^12.1.0",
     "react": "^18",
     "react-dom": "^18",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "daisyui": "^4.10.2",

@@ -45,7 +45,7 @@ export const MenuConfig: { [key: string]: Menu } = {
   [MenuTitle.CONTACT]: {
     title: MenuTitle.CONTACT,
     href: '/contact',
-    golive: false,
+    golive: true,
   },
   [MenuTitle.DONATE]: {
     title: MenuTitle.DONATE,
