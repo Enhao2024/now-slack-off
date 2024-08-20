@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { throttle } from 'radash';
 
 const Email = () => {
 
@@ -22,12 +23,11 @@ const Email = () => {
 
   const sendWithVerification = async function (e: any) {
     e.preventDefault();
+    // TODO: integrate notification
     if (!validateFields()) {
-      console.log("Invalid Fields");
       return;
     }
     if (!executeRecaptcha) {
-      console.log("Execute recaptcha not available yet");
       return;
     }
     const token = await executeRecaptcha('registerSubmit');
@@ -77,7 +77,7 @@ const Email = () => {
               <textarea className="textarea textarea-primary" value={content} required placeholder="Content" onChange={(e) => setContent(e.target.value)}></textarea>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary" onClick={sendWithVerification}>Send</button>
+              <button className="btn btn-primary" onClick={throttle({ interval: 2000 }, sendWithVerification)}>Send</button>
             </div>
             <div className='text-xs m-2'>
               This site is protected by reCAPTCHA and the Google&nbsp;
