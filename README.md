@@ -1,36 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is an open source [Next.js](https://nextjs.org/) project. Our mission is to create the world's largest online ~~slack-off~~ lunch break community. We’re all about embracing the art of the midday reset — sometimes, the most productive thing you can do is step away from your screen for a while and daydream about that perfect weekend getaway or your favorite Netflix series.
 
-## Getting Started
+## More than Slack-Off 🧠
 
-First, run the development server:
+We firmly believe that taking a breather is key to conquering your afternoon workload like a boss. Rebalance, refresh, and return with the energy of a thousand (well, maybe a hundred) coffees. Whether it's planning your next culinary adventure, trading hilarious cat memes, or sharing your latest hobby, this is the place to do it.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Don’t piss off your boss 😈
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+But hey, we're not encouraging endless loafing around! To keep things balanced and productive, each user is limited to one hour of fun per day. Once you've hit your limit, you’ll be gently redirected to a random educational website — and in case you left too long😏
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to join the fun 🏄‍♂️
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Interested in being part of the coolest slacker crew around? Simply reach out to our project admin and snag yourself an invite. We welcome contributions, be they ideas, code, or even just really great snack recommendations.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
