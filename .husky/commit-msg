@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# either way works.
+# using commitlint somehow takes more than 5 seconds to respond, instead use customized script
+
+# option-1: commitlint
+# pnpm dlx commitlint --edit "$1"
+
+# option-2: bash script
+commit_message=$(cat "$1")
+prefix="NSO"
+if ! echo "$commit_message" | grep -qE "^($prefix)-"; then
+    echo "Error: Commit message must start with $prefix"
+    exit 1
+fi
