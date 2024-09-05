@@ -1,16 +1,20 @@
-name: Greeting from Mona
+name: WecomBot
 on: push
 
 jobs:
-  my-job:
-    name: My Job
+  notify-job:
+    name: Notify New Github Actions
     runs-on: ubuntu-latest
     steps:
-    - name: Print a greeting
-      env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Mona
-        MIDDLE_NAME: The
-        LAST_NAME: Octocat
-      run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+      - name: Notify WeChat Brief
+        uses: foxundermoon/wechat-work-action@v1
+        with:
+          url: ${{ secrets.WECHAT_WORK_WEBHOOK_URL }}
+          type: text
+          content: |
+            ## Job ${{ job.status }}
+            - branch: ${{ github.ref_name }}
+            - commit hash: ${{ github.sha }}
+            - committer: ${{ github.actor }}
+            - compare: ${{ github.event.compare }}
+            - commit time: ${{ github.event.head_commit.timestamp }}
