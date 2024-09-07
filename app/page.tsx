@@ -1,7 +1,7 @@
-import Calculator from "@/components/home/Calculator";
-import Entrance from "@/components/layout/Entrance";
-import MenuLink from "@/components/layout/MenuLink";
-import { MenuTitle } from "@/utils/MenuConfig";
+import Calculator from '@/components/home/Calculator';
+import Entrance from '@/components/layout/Entrance';
+import MenuLink from '@/components/layout/MenuLink';
+import { MenuTitle } from '@/utils/MenuConfig';
 
 export default function Home() {
   return (
@@ -17,10 +17,10 @@ export default function Home() {
             </div>
             <div className="flex flex-col space-y-12">
               <MenuLink menuName={MenuTitle.LUNCH_GUESS}>
-                <button className="btn btn-primary">Not Sure What&apos;s for Lunch?</button>
+                <button className="btn btn-primary" type="button">Not Sure What&apos;s for Lunch?</button>
               </MenuLink>
               <MenuLink menuName={MenuTitle.CHAT_ROOM}>
-                <button className="btn btn-primary">Meet Other Slackers!</button>
+                <button className="btn btn-primary" type="button">Meet Other Slackers!</button>
               </MenuLink>
             </div>
           </div>

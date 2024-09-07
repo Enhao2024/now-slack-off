@@ -1,12 +1,10 @@
-import Email from '@/components/email/Email'
-import Entrance from '@/components/layout/Entrance'
+import Email from '@/components/email/Email';
+import Entrance from '@/components/layout/Entrance';
 
-const page = () => {
-  return (
-    <Entrance>
-      <Email/>
-    </Entrance>
-  )
-}
+const page = () => (
+  <Entrance>
+    <Email />
+  </Entrance>
+);
 
-export default page
+export default page;

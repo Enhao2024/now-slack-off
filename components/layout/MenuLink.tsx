@@ -1,40 +1,43 @@
 import { inProduction } from '@/utils/GeneralUtils';
 import { MenuConfig, MenuTitle } from '@/utils/MenuConfig';
 import Link from 'next/link';
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface Props {
   menuName: MenuTitle,
   newPage?: boolean,
   children?: ReactNode,
 }
-const MenuLink = ({ menuName, newPage, children }: Props) => {
+
+function MenuLink({ menuName, newPage, children }: Props) {
   if (!menuName || !MenuConfig[menuName]) {
     return null;
   }
 
   const content = () => {
-    if (!!children) {
+    if (children) {
       return children;
     }
     return MenuConfig[menuName].title;
-  }
+  };
 
-  const greyout = () => {
-    return inProduction() && !MenuConfig[menuName].golive;
-  }
+  const greyout = () => inProduction() && !MenuConfig[menuName].golive;
 
   if (greyout()) {
     return (
-      <div title='Will be there soon...'>
-        <Link className='disabled-link' href={MenuConfig[menuName].href} target={newPage ? '_blank' : '_self'}>{content()}</Link>
+      <div title="Will be there soon...">
+        <Link className="disabled-link" href={MenuConfig[menuName].href} target={newPage ? '_blank' : '_self'}>{content()}</Link>
       </div>
-    )
+    );
   }
   return (
     <Link href={MenuConfig[menuName].href} target={newPage ? '_blank' : '_self'}>{content()}</Link>
-  )
-
+  );
 }
 
-export default MenuLink
+MenuLink.defaultProps = {
+  newPage: false,
+  children: undefined,
+};
+
+export default MenuLink;

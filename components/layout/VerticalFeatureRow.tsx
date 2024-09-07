@@ -4,9 +4,11 @@ interface Props {
   image: string;
   imageAlt: string;
   reverse?: boolean;
-};
+}
 
-const VerticalFeatureRow = ({ title, description, image, imageAlt, reverse }: Props) => {
+function VerticalFeatureRow({
+  title, description, image, imageAlt, reverse,
+}: Props) {
   return (
     <div className={`${reverse ? 'flex-row-reverse' : ''} mt-20 flex flex-wrap items-center justify-evenly`}>
       <div className="w-full text-center sm:w-1/2 sm:px-6">
@@ -23,6 +25,10 @@ const VerticalFeatureRow = ({ title, description, image, imageAlt, reverse }: Pr
       </div>
     </div>
   );
+}
+
+VerticalFeatureRow.defaultProps = {
+  reverse: false,
 };
 
-export { VerticalFeatureRow };
+export default VerticalFeatureRow;

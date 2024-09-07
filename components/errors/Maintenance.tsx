@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const Maintenance = () => {
+function Maintenance() {
   return (
-    <div className='text-2xl min-h-[80vh] flex justify-center items-center'>Ops, We&apos;re in maintenance...</div>
-  )
+    <div className="text-2xl min-h-[80vh] flex justify-center items-center">Ops, We&apos;re in maintenance...</div>
+  );
 }
 
-export default Maintenance
+export default Maintenance;
