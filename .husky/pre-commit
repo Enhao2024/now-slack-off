@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+pnpm lint || {
+  echo "❌ Lint failed. Run 'pnpm lint --fix' locally and fix all issues before committing."
+  exit 1
+}
+
+echo "✅ Lint passed. Ready to commit!"
