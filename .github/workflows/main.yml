@@ -41,10 +41,9 @@ jobs:
           url: ${{ secrets.WECHAT_WORK_WEBHOOK_URL }}
           type: text
           content: |
-            ## Job ${{ job.status }}
+            ## Job ${{ needs.lint-check.result }}
             - branch: ${{ github.ref_name }}
-            - commit hash: ${{ github.sha }}
+            - commit hash: ${{ github.sha }}.SubString(0, 8)}}
             - committer: ${{ github.actor }}
             - compare: ${{ github.event.compare }}
             - commit time: ${{ github.event.head_commit.timestamp }}
-            - Lint Job Status: ${{ needs.lint-check.result }}
