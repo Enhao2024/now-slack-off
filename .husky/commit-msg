@@ -10,6 +10,6 @@
 commit_message=$(cat "$1")
 prefix="NSO"
 if ! echo "$commit_message" | grep -qE "^($prefix)-"; then
-    echo "Error: Commit message must start with $prefix"
+    echo "❌ Error: Commit message must start with $prefix"
     exit 1
 fi

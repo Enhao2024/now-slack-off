@@ -1,7 +1,6 @@
-// /app/api/sendMail/route.ts
-import { NextResponse } from 'next/server';
+/* eslint-disable import/prefer-default-export */
 import nodemailer from 'nodemailer';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import axios from 'axios';
 
 interface RequestBody {
@@ -12,20 +11,21 @@ interface RequestBody {
 }
 
 export async function POST(req: NextRequest) {
-
-  const { name, userEmail, message, token }: RequestBody = await req.json();
+  const {
+    name, userEmail, message, token,
+  }: RequestBody = await req.json();
 
   const secretKey = process?.env?.RECAPTCHA_SECRET_KEY;
   const formData = `secret=${secretKey}&response=${token}`;
   try {
     const res = await axios.post(
-      "https://www.google.com/recaptcha/api/siteverify",
+      'https://www.google.com/recaptcha/api/siteverify',
       formData,
       {
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-      }
+      },
     );
 
     if (res && res.data?.success && res.data?.score > 0.5) {
@@ -39,14 +39,14 @@ export async function POST(req: NextRequest) {
             pass: process.env.SES_PASS,
           },
         });
-    
+
         const emailBody = `
           <div style="font-family: Arial, sans-serif; color: #333;">
             <h3>New message from ${name} </h3>
             <p> ${message} </p>
           </div>
         `;
-    
+
         const mailOptions = {
           from: process.env.FROM_EMAIL,
           to: process.env.ADMIN_EMAIL,
@@ -54,15 +54,14 @@ export async function POST(req: NextRequest) {
           html: emailBody,
           replyTo: userEmail,
         };
-    
+
         await transporter.sendMail(mailOptions);
-    
+
         return NextResponse.json({ success: true });
       } catch (error) {
         return NextResponse.json({ success: false, error: 'Failed Email' }, { status: 500 });
       }
     }
-
   } catch (e) {
     return NextResponse.json({ success: false, error: 'Failed Email' }, { status: 500 });
   }

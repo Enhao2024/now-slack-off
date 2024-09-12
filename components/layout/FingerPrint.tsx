@@ -1,47 +1,46 @@
-'use client'
-import { getBaseUrl } from "@/utils/GeneralUtils";
-import { getCurrentBrowserFingerPrint } from "@rajesh896/broprint.js";
-import axios from "axios";
+'use client';
+
+import { getBaseUrl } from '@/utils/GeneralUtils';
+import { getCurrentBrowserFingerPrint } from '@rajesh896/broprint.js';
+import axios from 'axios';
 import { publicEncrypt } from 'crypto';
 import { Buffer } from 'buffer';
-import { debounce } from 'radash'
-import { useRef, useEffect } from "react";
-
+import { debounce } from 'radash';
+import { useRef, useEffect } from 'react';
 
 interface RequestBody {
   fingerprint: string;
 }
 
-const publicKey: string = process.env.REQUEST_BODY_KEY || '';
+const PUBLIC_KEY: string = process.env.REQUEST_BODY_KEY || '';
 
-const FingerPrint = () => {
-
+function FingerPrint() {
   // encrypt func
   const encryptWithPublicKey = (publicKey: string, data: RequestBody) => {
     const buffer = Buffer.from(JSON.stringify(data));
-    const uint8Array = new Uint8Array(buffer)
+    const uint8Array = new Uint8Array(buffer);
     const encrypted = publicEncrypt(
       publicKey,
-      uint8Array
+      uint8Array,
     );
     return encrypted.toString('base64');
-  }
+  };
 
   // request func
   const request = () => {
     getCurrentBrowserFingerPrint().then(async (fingerprint) => {
       const baseUrl = getBaseUrl();
       const requestBody: RequestBody = { fingerprint: fingerprint.toString() };
-      const encryptedBody = encryptWithPublicKey(publicKey, requestBody);
+      const encryptedBody = encryptWithPublicKey(PUBLIC_KEY, requestBody);
       try {
         await axios.post(`${baseUrl}/user/visit`, {
-          body: encryptedBody
+          body: encryptedBody,
         });
       } catch (error) {
         console.log(`Request Failed for ${baseUrl}/user/visit`);
       }
-    })
-  }
+    });
+  };
 
   // debounce func
   const debouncedFunctionRef = useRef(debounce({ delay: 5000 }, request));
@@ -51,6 +50,6 @@ const FingerPrint = () => {
   }, []);
 
   return null;
-};
+}
 
 export default FingerPrint;

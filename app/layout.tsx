@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { AppConfig } from "@/utils/AppConfig";
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { AppConfig } from '@/utils/AppConfig';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Now Slack Off",
-  description: "Chill Out Now!",
+  title: 'Now Slack Off',
+  description: 'Chill Out Now!',
   icons: AppConfig.iconUrl,
 };
 

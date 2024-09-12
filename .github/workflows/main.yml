@@ -1,20 +1,51 @@
-name: WecomBot
+name: PipeLine
 on: push
 
 jobs:
+  lint-check:
+    name: Eslint Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 9
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Eslint Tests
+        run: pnpm lint
+
   notify-job:
     name: Notify New Github Actions
     runs-on: ubuntu-latest
+    needs: [lint-check]
+
     steps:
-      - name: Notify WeChat Brief
+      - name: Shorten Hash
+        run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+      - name: Notify WeChat
+        if: ${{ always() }}
         uses: foxundermoon/wechat-work-action@v1
         with:
           url: ${{ secrets.WECHAT_WORK_WEBHOOK_URL }}
           type: text
           content: |
-            ## Job ${{ job.status }}
+            ## Job ${{ needs.lint-check.result }}
             - branch: ${{ github.ref_name }}
-            - commit hash: ${{ github.sha }}
+            - commit hash: ${{ env.SHORT_SHA }}
             - committer: ${{ github.actor }}
             - compare: ${{ github.event.compare }}
             - commit time: ${{ github.event.head_commit.timestamp }}
