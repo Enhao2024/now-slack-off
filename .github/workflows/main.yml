@@ -34,7 +34,9 @@ jobs:
     needs: [lint-check]
 
     steps:
-      - name: Notify WeChat Brief
+      - name: Shorten Hash
+        run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+      - name: Notify WeChat
         if: ${{ always() }}
         uses: foxundermoon/wechat-work-action@v1
         with:
@@ -43,7 +45,7 @@ jobs:
           content: |
             ## Job ${{ needs.lint-check.result }}
             - branch: ${{ github.ref_name }}
-            - commit hash: ${{ github.sha }}.SubString(0, 8)}}
+            - commit hash: ${{ env.SHORT_SHA }}
             - committer: ${{ github.actor }}
             - compare: ${{ github.event.compare }}
             - commit time: ${{ github.event.head_commit.timestamp }}
