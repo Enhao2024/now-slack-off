@@ -7,17 +7,17 @@ function Logo() {
     <>
       <div className="hidden lg:block">
         <Link href="/">
-          <div className="flex flex-row mx-4 justify-between items-center space-x-4">
-            <LogoIcon customize="w-16 h-16" />
+          <div className="flex flex-row mx-8 justify-between items-center space-x-4">
+            <LogoIcon customize="w-14 h-14" />
             <div className="nav-logo-text">Slack Off Now</div>
-            <Timer fontSize="24px" title="Will Be Redirected After No Action" customize="tooltip-right" />
+            <Timer fontSize="22px" title="Will Be Redirected After No Action" customize="tooltip-right" />
           </div>
         </Link>
       </div>
       <div className="lg:hidden">
         <Link href="/">
-          <div className="flex flex-row mx-4 justify-between items-center space-x-4">
-            <LogoIcon customize="w-16 h-16" />
+          <div className="flex flex-row mx-8 justify-between items-center space-x-4">
+            <LogoIcon customize="w-14 h-14" />
             <Timer fontSize="20px" title="Will Be Redirected After No Action" customize="tooltip-bottom" />
           </div>
         </Link>

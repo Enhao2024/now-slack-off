@@ -24,7 +24,7 @@ function Entrance({ children, custom }: Props) {
   );
   return (
     <GoogleCaptchaWrapper>
-      <main className="flex min-h-screen flex-col items-center justify-between out-container bg-global">
+      <main className="flex min-h-screen flex-col items-center justify-between bg-global">
         {renderMain()}
       </main>
     </GoogleCaptchaWrapper>
