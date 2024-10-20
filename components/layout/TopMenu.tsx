@@ -12,7 +12,7 @@ function TopMenu() {
   });
 
   return (
-    <div className="hidden lg:block lg:flex space-x-6 justify-evenly nav-menu-text">
+    <div className="hidden lg:block lg:flex space-x-6 justify-evenly nav-menu-text px-8">
       {renderMenu()}
     </div>
   );

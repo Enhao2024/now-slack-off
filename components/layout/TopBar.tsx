@@ -4,7 +4,7 @@ import TopMenu from './TopMenu';
 
 function TopBar() {
   return (
-    <div className="w-full flex justify-between items-center nav-logo-text">
+    <div className="w-full flex justify-between items-center nav-logo-text fixed py-4 bg-opacity-20 z-50 backdrop-blur-md">
       <Logo />
       <TopMenu />
       <Hamburger />

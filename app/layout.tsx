@@ -6,8 +6,8 @@ import { AppConfig } from '@/utils/AppConfig';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Now Slack Off',
-  description: 'Chill Out Now!',
+  title: 'Good After Lunch',
+  description: 'Recharge & Chill Out',
   icons: AppConfig.iconUrl,
 };
 
