@@ -5,7 +5,7 @@ import { MenuTitle } from '@/utils/MenuConfig';
 import React from 'react';
 
 const page = () => (
-  <Entrance custom="my-10 lg:my-20">
+  <Entrance custom="pt-40 my-10 lg:my-20 px-32">
     <div className="flex flex-col justify-between items-center">
       <div className="flex flex-col justify-between items-center space-y-16">
         <h1 className="text-3xl font-bold">What Is This</h1>

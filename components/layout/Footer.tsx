@@ -1,18 +1,18 @@
 import { MenuTitle } from '@/utils/MenuConfig';
-import AboutSvg from '../svg/AboutIcon';
-import Coffee from '../svg/CoffeeIcon';
-import Contact from '../svg/ContactIcon';
+// import AboutSvg from '../svg/AboutIcon';
+// import Coffee from '../svg/CoffeeIcon';
+// import Contact from '../svg/ContactIcon';
 import MenuLink from './MenuLink';
 
 function Footer() {
   return (
     <footer className="footer footer-center p-10 text-base-content rounded">
       <nav className="grid grid-flow-col gap-4 font-bold">
-        <MenuLink menuName={MenuTitle.CALCULATOR} />
-        <MenuLink menuName={MenuTitle.LUNCH_GUESS} />
-        <MenuLink menuName={MenuTitle.CHAT_ROOM} />
+        <MenuLink menuName={MenuTitle.ABOUT} />
+        <MenuLink menuName={MenuTitle.CONTACT} />
+        <MenuLink menuName={MenuTitle.DONATE} />
       </nav>
-      <nav>
+      {/* <nav>
         <div className="grid grid-flow-col gap-8">
           <MenuLink menuName={MenuTitle.ABOUT}>
             <AboutSvg customize="w-12 h-12" />
@@ -24,9 +24,9 @@ function Footer() {
             <Coffee customize="w-12 h-12" />
           </MenuLink>
         </div>
-      </nav>
+      </nav> */}
       <aside>
-        <p className="text-xs m-2">Copyright © 2024 - All right reserved by SlackOffNow</p>
+        <p className="text-xs m-2">Copyright © 2024 - All right reserved by GoodAfterLunch</p>
         <div className="text-xs m-2">
           This site is protected by reCAPTCHA and the Google&nbsp;
           <a className="text-cyan-500" href="https://policies.google.com/privacy">Privacy Policy</a>

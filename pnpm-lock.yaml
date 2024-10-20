@@ -23,6 +23,9 @@ dependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
+  framer-motion:
+    specifier: ^11.11.9
+    version: 11.11.9(react-dom@18.3.1)(react@18.3.1)
   lucide-react:
     specifier: ^0.453.0
     version: 0.453.0(react@18.3.1)
@@ -32,6 +35,9 @@ dependencies:
   next-seo:
     specifier: ^6.5.0
     version: 6.5.0(next@14.2.3)(react-dom@18.3.1)(react@18.3.1)
+  next-themes:
+    specifier: ^0.3.0
+    version: 0.3.0(react-dom@18.3.1)(react@18.3.1)
   nodemailer:
     specifier: ^6.9.14
     version: 6.9.14
@@ -2193,6 +2199,25 @@ packages:
       mime-types: 2.1.35
     dev: false
 
+  /framer-motion@11.11.9(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-XpdZseuCrZehdHGuW22zZt3SF5g6AHJHJi7JwQIigOznW4Jg1n0oGPMJQheMaKLC+0rp5gxUKMRYI6ytd3q4RQ==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tslib: 2.6.3
+    dev: false
+
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
@@ -2969,6 +2994,16 @@ packages:
       react-dom: '>=16.0.0'
     dependencies:
       next: 14.2.3(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
+  /next-themes@0.3.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-/QHIrsYpd6Kfk7xakK4svpDI5mmXP0gfvCoJdGpZQ2TOrQZmsW0QxjaiLn8wbIKjtm4BTSqLoix4lxYYOnLJ/w==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18
+      react-dom: ^16.8 || ^17 || ^18
+    dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     dev: false
