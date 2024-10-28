@@ -14,12 +14,12 @@ function MenuCard({ name, toPage, backgroundColor }: Props) {
   return (
     <MenuLink menuName={toPage}>
       <MagicCard
-        className="cursor-pointer flex-col items-center justify-center shadow-2xl
-     whitespace-nowrap text-4xl h-64"
+        className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap h-60
+        text-3xl"
         gradientColor={backgroundColor}
       >
         <GradualSpacing
-          className="font-display text-center text-3xl font-bold -tracking-widest  text-black dark:text-white md:text-3xl md:leading-[5rem]"
+          className="font-display text-center text-xl font-bold -tracking-widest  text-black dark:text-white md:text-2xl md:leading-[5rem]"
           text={name}
         />
       </MagicCard>
