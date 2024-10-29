@@ -32,24 +32,18 @@ function DashBoard() {
           </div>
         </div>
 
-        <div className="lg:hidden w-3/5 flex flex-col scrollbar-no-space ">
-          <div className="carousel rounded-box">
-            <div className="carousel-item w-full">
-              <div className="flex w-full flex-col gap-6 p-4">
-                <MenuCard name="Afternoon Todo" backgroundColor={cardBackground} toPage={MenuTitle.AFTERNOON_PLAN} />
-                <MenuCard name="Recharge" backgroundColor={cardBackground} toPage={MenuTitle.LEARNING} />
-                <MenuCard name="Next Week Todo" backgroundColor={cardBackground} toPage={MenuTitle.NEXT_WEEK_PLAN} />
-                <MenuCard name="Weekend Plan" backgroundColor={cardBackground} toPage={MenuTitle.WEEKEND_PLAN} />
-              </div>
-            </div>
-            <div className="carousel-item w-full">
-              <div className="flex w-full flex-col gap-6 p-4">
-                <MenuCard name="Lunch Guess" backgroundColor={cardBackground} toPage={MenuTitle.LUNCH_GUESS} />
-                <MenuCard name="Bring Your Lunch" backgroundColor={cardBackground} toPage={MenuTitle.LUNCH_RECIPE} />
-                <MenuCard name="Chat Room" backgroundColor={cardBackground} toPage={MenuTitle.CHAT_ROOM} />
-                <MenuCard name="After Work Plan" backgroundColor={cardBackground} toPage={MenuTitle.AFTER_WORK_PLAN} />
-              </div>
-            </div>
+        <div className="lg:hidden w-3/4 flex flex-col">
+          <div className="flex w-full flex-col gap-6 p-4">
+            <MenuCard name="Afternoon Todo" backgroundColor={cardBackground} toPage={MenuTitle.AFTERNOON_PLAN} />
+            <MenuCard name="Recharge" backgroundColor={cardBackground} toPage={MenuTitle.LEARNING} />
+            <MenuCard name="Next Week Todo" backgroundColor={cardBackground} toPage={MenuTitle.NEXT_WEEK_PLAN} />
+            <MenuCard name="Weekend Plan" backgroundColor={cardBackground} toPage={MenuTitle.WEEKEND_PLAN} />
+          </div>
+          <div className="flex w-full flex-col gap-6 p-4">
+            <MenuCard name="Lunch Guess" backgroundColor={cardBackground} toPage={MenuTitle.LUNCH_GUESS} />
+            <MenuCard name="Bring Your Lunch" backgroundColor={cardBackground} toPage={MenuTitle.LUNCH_RECIPE} />
+            <MenuCard name="Chat Room" backgroundColor={cardBackground} toPage={MenuTitle.CHAT_ROOM} />
+            <MenuCard name="After Work Plan" backgroundColor={cardBackground} toPage={MenuTitle.AFTER_WORK_PLAN} />
           </div>
 
         </div>

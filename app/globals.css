@@ -27,7 +27,7 @@
 } */
 
 /* uncomment below line to hide recaptcha-badge */
-/* .grecaptcha-badge { visibility: hidden; } */
+.grecaptcha-badge { visibility: hidden; }
 
 @layer utilities {
   .text-balance {
