@@ -1,7 +1,4 @@
 import { MenuTitle } from '@/utils/MenuConfig';
-// import AboutSvg from '../svg/AboutIcon';
-// import Coffee from '../svg/CoffeeIcon';
-// import Contact from '../svg/ContactIcon';
 import MenuLink from './MenuLink';
 
 function Footer() {
@@ -12,19 +9,6 @@ function Footer() {
         <MenuLink menuName={MenuTitle.CONTACT} />
         <MenuLink menuName={MenuTitle.DONATE} />
       </nav>
-      {/* <nav>
-        <div className="grid grid-flow-col gap-8">
-          <MenuLink menuName={MenuTitle.ABOUT}>
-            <AboutSvg customize="w-12 h-12" />
-          </MenuLink>
-          <MenuLink menuName={MenuTitle.CONTACT}>
-            <Contact customize="w-12 h-12" />
-          </MenuLink>
-          <MenuLink menuName={MenuTitle.DONATE}>
-            <Coffee customize="w-12 h-12" />
-          </MenuLink>
-        </div>
-      </nav> */}
       <aside>
         <p className="text-xs m-2">Copyright © 2024 - All right reserved by GoodAfterLunch</p>
         <div className="text-xs m-2">
