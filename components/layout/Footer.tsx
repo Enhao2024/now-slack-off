@@ -13,10 +13,10 @@ function Footer() {
         <p className="text-xs m-2">Copyright © 2024 - All right reserved by GoodAfterLunch</p>
         <div className="text-xs m-2">
           This site is protected by reCAPTCHA and the Google&nbsp;
-          <a className="text-cyan-500" href="https://policies.google.com/privacy">Privacy Policy</a>
+          <a className="font-bold" href="https://policies.google.com/privacy">Privacy Policy</a>
           {' '}
           and&nbsp;
-          <a className="text-cyan-500" href="https://policies.google.com/terms">Terms of Service</a>
+          <a className="font-bold" href="https://policies.google.com/terms">Terms of Service</a>
           {' '}
           apply.
         </div>

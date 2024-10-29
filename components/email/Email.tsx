@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { throttle } from 'radash';
+import ShimmerButton from '../ui/shimmer-button';
 
 function Email() {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -90,7 +91,7 @@ function Email() {
               </label>
               <textarea
                 id="nso-email-content"
-                className="textarea textarea-primary"
+                className="textarea input-bordered"
                 value={content}
                 required
                 placeholder="Content"
@@ -98,20 +99,21 @@ function Email() {
               />
             </div>
             <div className="form-control mt-6">
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={throttle({ interval: 2000 }, sendWithVerification)}
-              >
-                Send
-              </button>
+              <ShimmerButton className="shadow-2xl" onClick={throttle({ interval: 2000 }, sendWithVerification)}>
+                <span className="whitespace-pre-wrap text-center text-sm font-medium
+                leading-none tracking-tight text-white dark:from-white
+                dark:to-slate-900/10 lg:text-lg"
+                >
+                  Send
+                </span>
+              </ShimmerButton>
             </div>
             <div className="text-xs m-2">
               This site is protected by reCAPTCHA and the Google&nbsp;
-              <a className="text-cyan-500" href="https://policies.google.com/privacy">Privacy Policy</a>
+              <a className="font-bold" href="https://policies.google.com/privacy">Privacy Policy</a>
               {' '}
               and&nbsp;
-              <a className="text-cyan-500" href="https://policies.google.com/terms">Terms of Service</a>
+              <a className="font-bold" href="https://policies.google.com/terms">Terms of Service</a>
               {' '}
               apply.
             </div>

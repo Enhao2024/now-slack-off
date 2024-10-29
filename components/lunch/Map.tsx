@@ -25,7 +25,7 @@ function Map({ lunch, coordinate }: Props) {
       <div className="lg:hidden">
         <iframe
           title="Slacker Map"
-          width="360"
+          width="320"
           height="500"
           loading="lazy"
           src={`https://www.google.com/maps/embed/v1/search?zoom=13&center=${coordinate.lat},${coordinate.lng}&q=${lunch}&key=${API_KEY}`}
