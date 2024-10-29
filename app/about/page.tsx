@@ -3,9 +3,10 @@ import MenuLink from '@/components/layout/MenuLink';
 import VerticalFeatureRow from '@/components/layout/VerticalFeatureRow';
 import { MenuTitle } from '@/utils/MenuConfig';
 import React from 'react';
+import ShimmerButton from '@/components/ui/shimmer-button';
 
 const page = () => (
-  <Entrance custom="pt-40 my-10 lg:my-20 px-32">
+  <Entrance custom="pt-40 my-10 px-8 lg:my-20 lg:px-32">
     <div className="flex flex-col justify-between items-center">
       <div className="flex flex-col justify-between items-center space-y-16">
         <h1 className="text-3xl font-bold">What Is This</h1>
@@ -15,7 +16,13 @@ const page = () => (
           &nbsp; and entertaining your smoko time, we are not encourging slack-off seriously but wish you may chill out here
         </p>
         <MenuLink menuName={MenuTitle.CONTACT}>
-          <button type="button" className="btn btn-primary w-64">Contact Us</button>
+          <ShimmerButton className="shadow-2xl">
+            <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none
+            tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg"
+            >
+              Contact Us
+            </span>
+          </ShimmerButton>
         </MenuLink>
 
       </div>

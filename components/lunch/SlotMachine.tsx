@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Coordinate } from '@/types/common';
 import { FOOD_TYPES } from '@/constants/FoodTypes';
+import { CoolMode } from '@/components/ui/cool-mode';
 import Map from './Map';
 
 const initLocation: Coordinate = {
@@ -55,8 +56,16 @@ function SlotMachine() {
   return (
     <div className="flex flex-col space-y-8 items-center">
       <div className="join input-bordered input-primary">
-        <button className="btn btn-primary join-item rounded-r-full w-40" type="button" onClick={() => updateItem()}>Grab A ... What?</button>
-        <input className="input input-bordered input-primary join-item font-medium w-48" placeholder="Find My Lunch!" value={item} readOnly />
+        <CoolMode>
+          <button
+            className="btn bg-black text-white join-item rounded-r-full w-40"
+            type="button"
+            onClick={() => updateItem()}
+          >
+            Grab A ... What?
+          </button>
+        </CoolMode>
+        <input className="input input-bordered join-item font-medium w-40 lg:48" placeholder="Find My Lunch!" value={item} readOnly />
       </div>
       <div className="p-4">
         <Map lunch={item} coordinate={location} />
